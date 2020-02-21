@@ -38,7 +38,7 @@ public class Task2 {
      * @param inclusively входят ли границы в заданный даипазон
      */
     boolean numberInRange(Integer number, Integer leftBound, Integer rightBound, Boolean inclusively) {
-        return false; //your code here
+        return !(number < leftBound || number > rightBound) ; //your code here
     }
 
     /**

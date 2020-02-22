@@ -1,5 +1,7 @@
 package ru.itmo.java;
 
+import static java.lang.Math.abs;
+
 @SuppressWarnings("all")
 public class Task2 {
 
@@ -55,7 +57,9 @@ public class Task2 {
      * Даны два вещественных числа. Определите равны ли они
      */
     boolean areRealNumbersEqual(double a, double b) {
-        return a == b; //your code here
+        double eps = .000000000000001;
+
+        return abs(a - b) < eps;
     }
 
     /**

@@ -27,6 +27,9 @@ public class Task2 {
      * Даны 2 целых числа. Проверьте равны ли они
      */
     boolean testIfIntsEqual(Integer a, Integer b) {
+		if (a == null || b == null) {
+			return false;
+		}
         return a.compareTo(b) == 0; //your code here
     }
 
@@ -44,10 +47,9 @@ public class Task2 {
             return false;
 		}
         if (inclusively) {
-            leftBound--;
-            rightBound++;
+            return number >= leftBound && number <= rightBound;
         }
-
+		
         return number > leftBound && number < rightBound;
     }
 

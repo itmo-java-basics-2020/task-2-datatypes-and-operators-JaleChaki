@@ -13,7 +13,7 @@ public class Task2 {
      * - вывод 0.9
      */
     double getFractionalPart(double realNumber) {
-        return realNumber - (int)realNumber; //your code here
+        return realNumber % 1; //your code here
     }
 
     /**
@@ -27,7 +27,7 @@ public class Task2 {
      * Даны 2 целых числа. Проверьте равны ли они
      */
     boolean testIfIntsEqual(Integer a, Integer b) {
-        return a == b; //your code here
+        return a.compareTo(b) == 0; //your code here
     }
 
     /**
@@ -40,16 +40,24 @@ public class Task2 {
      * @param inclusively входят ли границы в заданный даипазон
      */
     boolean numberInRange(Integer number, Integer leftBound, Integer rightBound, Boolean inclusively) {
-        return !(number < leftBound || number > rightBound) ; //your code here
+        if(number == null ||  leftBound == null || rightBound == null || inclusively == null) {
+            return false;
+		}
+        if (inclusively) {
+            leftBound--;
+            rightBound++;
+        }
+
+        return number > leftBound && number < rightBound;
     }
 
     /**
      * Даны 3 символа. Определите является ли хотя бы один из них цифрой 1..9
      */
     boolean atLeastOneIsDigit(char c1, char c2, char c3) {
-		boolean a1 = (c1 > '0') && (c1 < '9');
-		boolean a2 = (c2 > '0') && (c2 < '9');
-		boolean a3 = (c3 > '0') && (c3 < '9');
+		boolean a1 = (c1 >= '0') && (c1 <= '9');
+		boolean a2 = (c2 >= '0') && (c2 <= '9');
+		boolean a3 = (c3 >= '0') && (c3 <= '9');
         return a1 || a2 || a3; //your code here
     }
 
@@ -83,7 +91,7 @@ public class Task2 {
      * своем кабинете
      */
     int schoolDesks(int num1, int num2, int num3) {
-        return (num1 + 1) / 2 + (num2 + 1) / 2 + (num3 + 1) / 2; //your code here
+        return ((num1 + 1) / 2) + ((num2 + 1) / 2) + ((num3 + 1) / 2); //your code here
     }
 
     /**

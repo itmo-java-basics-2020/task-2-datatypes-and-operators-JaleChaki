@@ -90,7 +90,7 @@ public class Task2 {
      * Дано натуральное число N >= 10. Выведите результат применения XOR к последним 2-м цифрам числа N
      */
     int xorDigits(int N) {
-        return (n % 100 / 10) ^ (n % 10); //your code here
+        return (N % 100 / 10) ^ (N % 10); //your code here
     }
 
 }
